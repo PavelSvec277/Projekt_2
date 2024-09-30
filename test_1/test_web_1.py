@@ -34,3 +34,5 @@ def test_engeto_logo_click(page):
      logo = page.locator('div.logo-link')
      
      assert logo.click()
+
+?????
