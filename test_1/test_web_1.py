@@ -6,7 +6,7 @@ from playwright.sync_api import sync_playwright
 def browser():
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=False, slow_mo=6000
+            headless=False, slow_mo=1000
             )
         yield browser
         browser.close()
@@ -20,19 +20,25 @@ def page(browser):
     yield page
     page.close()
 
-def test_google_search(page):
-    page.goto("https://www.google.com/")
 
-    button = page.locator("#W0wltc")
+def test_engeto_cookies(page):
+    page.goto("https://engeto.cz/")
+    button = page.locator("#cookiescript_accept")
     button.click()
 
-    textarea = page.locator("#APjFqb")
-    textarea.fill("engeto")
-
-def test_engeto_logo_click(page):
-     page.goto("https://engeto.cz/")
-     logo = page.locator('div.logo-link')
+def test_engeto_logo(page):
+    page.goto("https://engeto.cz/")
+    button = page.locator("#cookiescript_accept")
+    button.click()
+    logo = page.locator('#logo')
      
-     assert logo.click()
+    assert logo.is_visible()
 
-?????
+def test_engeto_kontakty_click(page):
+    page.goto("https://engeto.cz/")
+    button = page.locator("#cookiescript_accept")
+    button.click()
+    
+    button_kontakty = page.locator('div a."contact-link h6 is_bold_700":has-text("Kontakt")')
+    button_kontakty.click()
+    
