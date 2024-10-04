@@ -39,7 +39,7 @@ def test_zobrazit_terminy_kurzu_click(page):
     button = page.locator("#cookiescript_accept")
     button.click()
 
-    button_terminy = page.locator('div.block-button:has-text("Zobrazit termíny kurzů")')
+    button_terminy = page.locator('main:has-text("Zobrazit termíny kurzů")')
     button_terminy.click()
 
 def test_engeto_kontakt_click(page):
@@ -47,6 +47,13 @@ def test_engeto_kontakt_click(page):
     button = page.locator("#cookiescript_accept")
     button.click()
     
-    button_kontakt = page.locator('div.contact-link.h6.is_bold_700:has-text("Kontakt")')
+    button_kontakt = page.locator('#top-header:has-text("Kontakt")')
     button_kontakt.click()
-    
+
+def test_engeto_kurzy_rozbalovaci_menu_click(page):
+    page.goto("https://engeto.cz/")
+    button = page.locator("#cookiescript_accept")
+    button.click()
+
+    button_kurzy = page.locator('div nav ul li:has-text("Kurzy")')
+    button_kurzy.click()
