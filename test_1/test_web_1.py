@@ -69,6 +69,6 @@ def test_engeto_vyber_kurzu(page):
     card_python_academy = page.locator('main div a:has-text("Python Akademie")')
     card_python_academy.click()
 
-    choose_course_18_02_to_06_05_2025 = page.locator('main div.h3:has-text("18. 02. - 06. 05. 2025, Online") block-button:has-text("Detail termínu")')
+    choose_course_18_02_to_06_05_2025 = page.locator('main div h3:has-text("18. 02. - 06. 05. 2025, Online") block-button:has-text("Detail termínu")')
     choose_course_18_02_to_06_05_2025.click()
     
