@@ -34,11 +34,19 @@ def test_engeto_logo(page):
      
     assert logo.is_visible()
 
-def test_engeto_kontakty_click(page):
+def test_zobrazit_terminy_kurzu_click(page):
+    page.goto("https://engeto.cz/")
+    button = page.locator("#cookiescript_accept")
+    button.click()
+
+    button_terminy = page.locator('div.block-button:has-text("Zobrazit termíny kurzů")')
+    button_terminy.click()
+
+def test_engeto_kontakt_click(page):
     page.goto("https://engeto.cz/")
     button = page.locator("#cookiescript_accept")
     button.click()
     
-    button_kontakty = page.locator('div a."contact-link h6 is_bold_700":has-text("Kontakt")')
-    button_kontakty.click()
+    button_kontakt = page.locator('div.contact-link.h6.is_bold_700:has-text("Kontakt")')
+    button_kontakt.click()
     
