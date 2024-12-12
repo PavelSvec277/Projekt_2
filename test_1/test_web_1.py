@@ -59,16 +59,16 @@ def test_engeto_kurzy_rozbalovaci_menu_click(page):
     button_kurzy.click()
 
 #def test_engeto_vyber_kurzu(page):
-    page.goto("https://engeto.cz/")
-    button = page.locator("#cookiescript_accept")
-    button.click()
+    #page.goto("https://engeto.cz/")
+    #button = page.locator("#cookiescript_accept")
+    #button.click()
 
-    button_kurzy = page.locator('div nav ul li:has-text("Kurzy")')
-    button_kurzy.click()
+    #button_kurzy = page.locator('div nav ul li:has-text("Kurzy")')
+    #button_kurzy.click()
 
-    card_python_academy = page.locator('main div a:has-text("Python Akademie")')
-    card_python_academy.click()
+    #card_python_academy = page.locator('main div a:has-text("Python Akademie")')
+    #card_python_academy.click()
 
-    choose_course_18_02_to_06_05_2025 = page.locator('main div h3:has-text("18. 02. - 06. 05. 2025, Online") block-button:has-text("Detail termínu")')
-    choose_course_18_02_to_06_05_2025.click()
+    #choose_course_18_02_to_06_05_2025 = page.locator('main div h3:has-text("18. 02. - 06. 05. 2025, Online") block-button:has-text("Detail termínu")')
+    #choose_course_18_02_to_06_05_2025.click()
     
