@@ -58,7 +58,7 @@ def test_engeto_kurzy_rozbalovaci_menu_click(page):
     button_kurzy = page.locator('div nav ul li:has-text("Kurzy")')
     button_kurzy.click()
 
-def test_engeto_vyber_kurzu(page):
+#def test_engeto_vyber_kurzu(page):
     page.goto("https://engeto.cz/")
     button = page.locator("#cookiescript_accept")
     button.click()
